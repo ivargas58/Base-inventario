@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Órdenes</h2>
+<a href="{{ url_for('add_order') }}" class="btn btn-primary">Agregar Orden</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Producto</th>
+            <th>Total</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order[0] }}</td>
+            <td>{{ order[1] }}</td>
+            <td>{{ order[2] }}</td>
+            <td>{{ order[4] }}</td> <!-- Aquí muestra el total de la orden -->
+            <td>{{ order[5] }}</td> <!-- Aquí muestra la fecha de la orden -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Agregar Gasto</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label for="description" class="form-label">Descripción</label>
+        <input type="text" class="form-control" id="description" name="description" required>
+    </div>
+    <div class="mb-3">
+        <label for="amount" class="form-label">Monto</label>
+        <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a href="{{ url_for('expenses') }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
